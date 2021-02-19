@@ -1,0 +1,23 @@
+pipeline {
+  agent { label 'chrome' }
+  tools {
+    nodejs 'NodeJS'
+  }
+  stages {
+    stage ('Installing (1fzwju)') {
+      steps {
+        sh script: 'npm install', label: '0b8lx8'
+      } //end steps
+    } // end stage Installing
+    stage ('Testing (ovzi39)') {
+      steps {
+        sh script: 'ng test  --browsers=ChromeHeadless --codeCoverage=true --preserveSymlinks=false --sourceMap=true --watch=false', label: 'qu7c5r'
+      } //end steps
+    } // end stage Testing
+    stage ('Building (vncwze)') {
+      steps {
+        sh script: 'ng build  --aot=false --buildOptimizer=false --commonChunk=true --crossOrigin=none --deleteOutputPath=true --extractCss=false --extractLicenses=false --forkTypeChecker=true --namedChunks=true --outputHashing=none --preserveSymlinks=false --prod=true --serviceWorker=false --sourceMap=true --statsJson=false --subresourceIntegrity=false --vendorChunk=true', label: 'c615m2'
+      } //end steps
+    } // end stage Building
+  }
+}
